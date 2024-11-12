@@ -1,0 +1,42 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main {
+  background-color: #0F056B;
+  width: 100%;
+  height: 100%;
+  .content {
+    width: 100%;
+    height: 100%;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .paulo-head-box {
+      animation: fadeIn 3s;
+      .paulo-head-img {
+        width: 350px;
+        height: auto;
+      }
+    }
+    button {
+      height: 80px;
+      width: 350px;
+    }
+  }
+}
+
+.rotate {
+  animation: rotation 2s linear;
+}
+
