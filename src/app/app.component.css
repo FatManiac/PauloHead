@@ -38,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     .paulo-head-box {
       animation: fadeIn 3s;
       .paulo-head-img {
@@ -45,9 +46,16 @@
         height: auto;
       }
     }
-    button {
-      height: 80px;
-      width: 350px;
+    .button-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      button {
+        height: 80px;
+        width: 350px;
+        margin-bottom: 16px;
+      }
     }
   }
 }
@@ -170,3 +178,46 @@
   animation: rotation 2s linear;
 }
 
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.select-perso-container {
+  width: 500px;
+  border: 2px solid red;
+  height: 400px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .select-perso {
+    width: 100px;
+    height: auto;
+    text-align: center;
+    border: 3px solid white;
+    background-color: red;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 10px;
+    &:hover {
+      transform: scale(1.1);
+    }
+    .perso-img {
+      width: 100px;
+      height: auto;
+      border-radius: 16px;
+      height: 120px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    p {
+      margin: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
