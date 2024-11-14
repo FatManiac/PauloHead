@@ -27,7 +27,7 @@ export class AppComponent {
     {name: 'Bonus', img: 'tomskyeHead.png', audio: ['Tomskye1.wav']},
   ];
   persoIndex = 0;
-  isSelectPersoShowed = true;
+  isSelectPersoShowed = false;
 
   constructor() {
     this.menuPlayer = new Audio();
@@ -40,7 +40,6 @@ export class AppComponent {
     this.menuPlayer.src = 'filtre.wav';
     this.menuPlayer.loop = true;
     this.menuPlayer.load();
-    this.menuPlayer.play();
     this.persoPlayer.src = 'nofiltre.wav';
     this.persoPlayer.src = 'nofiltre.wav';
     this.persoPlayer.loop = true;
@@ -71,11 +70,17 @@ export class AppComponent {
     this.isSelectPersoShowed = true;
     this.isPauloHeadShowed = !this.isPauloHeadShowed;
     this.persoPlayer.pause();
+    this.menuPlayer.play();
   }
 
 
   playSelectNoise() {
     this.selectNoisePlayer.pause();
     this.selectNoisePlayer.play();
+  }
+
+  showMenu() {
+    this.isSelectPersoShowed = true;
+    this.menuPlayer.play();
   }
 }

@@ -15,10 +15,9 @@
     <div class="paulo-head-box" *ngIf="isPauloHeadShowed" (click)="returnToSelectPerso()">
       <img src="{{persos[persoIndex].img}}" alt="Paulo Head" class="paulo-head-img rotate" />
     </div>
-    <!-- <div class="button-box">
-      <button *ngIf="!isPauloHeadShowed && !isSelectPersoShowed" (click)="switchPaulo()">{{persos[persoIndex].name}} !!!!!!</button>
-      <button *ngIf="!isPauloHeadShowed && !isSelectPersoShowed" (click)="returnToSelectPerso()">Revenir au choix des personnages</button>
-    </div> -->
+    <div class="button-box">
+      <button *ngIf="!isPauloHeadShowed && !isSelectPersoShowed" (click)="showMenu()">Entrer</button>
+    </div>
   </div>
 </main>
 
