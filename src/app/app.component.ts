@@ -28,6 +28,7 @@ export class AppComponent {
   ];
   persoIndex = 0;
   isSelectPersoShowed = false;
+  secondVolume = 0.25;
 
   constructor() {
     this.menuPlayer = new Audio();
@@ -39,12 +40,15 @@ export class AppComponent {
   ngOnInit() {
     this.menuPlayer.src = 'filtre.wav';
     this.menuPlayer.loop = true;
+    this.menuPlayer.volume = this.secondVolume;
     this.menuPlayer.load();
     this.persoPlayer.src = 'nofiltre.wav';
     this.persoPlayer.src = 'nofiltre.wav';
     this.persoPlayer.loop = true;
+    this.persoPlayer.volume = this.secondVolume;
     this.persoPlayer.load();
     this.selectNoisePlayer.src = '2008.mp3';
+    this.selectNoisePlayer.volume = this.secondVolume;
     this.selectNoisePlayer.load();
   }
 
@@ -53,7 +57,6 @@ export class AppComponent {
     this.isPauloHeadShowed = !this.isPauloHeadShowed;
     if (this.isPauloHeadShowed) {
       this.menuPlayer.pause();
-      this.persoPlayer.volume = 0.5;
       this.persoPlayer.play();
     }
   }
@@ -64,8 +67,8 @@ export class AppComponent {
     const rand = Math.floor(Math.random() * perso.audio.length);
     this.selectPlayer.src = perso.audio[rand];
     console.log('src: ', this.selectPlayer.src, rand);
-    this.selectPlayer.load();
     this.selectPlayer.volume = 1;
+    this.selectPlayer.load();
     this.selectPlayer.play();
     console.log('Selected perso: ', perso);
   }

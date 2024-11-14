@@ -2,7 +2,7 @@
   <div *ngIf="isPauloHeadShowed" class="firework"></div>
   <div *ngIf="isPauloHeadShowed" class="firework"></div>
   <div *ngIf="isPauloHeadShowed" class="firework"></div>
-  <div class="content">
+  <div [ngClass]="{'content_start': isPauloHeadShowed || isSelectPersoShowed}" class="content">
     <h1  *ngIf="isSelectPersoShowed">Choisissez votre personnage</h1>
     <div *ngIf="isSelectPersoShowed" class="select-perso-container">
       <div (mouseover)="playSelectNoise()" class="select-perso" *ngFor="let perso of persos" (click)="selectPerso(perso); switchPaulo()">
