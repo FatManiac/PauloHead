@@ -24,7 +24,7 @@ export class AppComponent {
     {name: 'Soso', img: 'sosoHead.png', audio: ['Soso1.wav', 'Soso2.wav']},
     {name: 'Nico', img: 'nicoHead.png', audio: ['Nico1.wav', 'Nico2.wav']},
     {name: 'Axel', img: 'axelHead.png', audio: ['Axel1.wav', 'Axel2.wav']},
-    {name: 'Bonus', img: 'tomskyeHead.png', audio: ['Tomskye1.wav']},
+    {name: 'Bonus', img: 'tomskyeHead.png', audio: ['Bonus.wav']},
   ];
   persoIndex = 0;
   isSelectPersoShowed = false;
