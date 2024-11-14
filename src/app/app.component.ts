@@ -53,6 +53,7 @@ export class AppComponent {
     this.isPauloHeadShowed = !this.isPauloHeadShowed;
     if (this.isPauloHeadShowed) {
       this.menuPlayer.pause();
+      this.persoPlayer.volume = 0.5;
       this.persoPlayer.play();
     }
   }
@@ -60,8 +61,11 @@ export class AppComponent {
   selectPerso(perso: any) {
     this.persoIndex = this.persos.indexOf(perso);
     this.isSelectPersoShowed = false;
-    this.selectPlayer.src = perso.audio[Math.random() % (perso.audio.length - 1)];
+    const rand = Math.floor(Math.random() * perso.audio.length);
+    this.selectPlayer.src = perso.audio[rand];
+    console.log('src: ', this.selectPlayer.src, rand);
     this.selectPlayer.load();
+    this.selectPlayer.volume = 1;
     this.selectPlayer.play();
     console.log('Selected perso: ', perso);
   }
