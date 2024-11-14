@@ -5,20 +5,20 @@
   <div class="content">
     <h1  *ngIf="isSelectPersoShowed">Choisissez votre personnage</h1>
     <div *ngIf="isSelectPersoShowed" class="select-perso-container">
-      <div class="select-perso" *ngFor="let perso of persos" (click)="selectPerso(perso)">
+      <div (mouseover)="playSelectNoise()" class="select-perso" *ngFor="let perso of persos" (click)="selectPerso(perso); switchPaulo()">
         <div class="perso-img">
           <img src='{{perso.name === "Bonus" ? "question.jpg" : perso.img}}' alt="perso.name" />
         </div>
         <p>{{ perso.name }}</p>
       </div>
     </div>
-    <div class="paulo-head-box" *ngIf="isPauloHeadShowed" (click)="switchPaulo()">
+    <div class="paulo-head-box" *ngIf="isPauloHeadShowed" (click)="returnToSelectPerso()">
       <img src="{{persos[persoIndex].img}}" alt="Paulo Head" class="paulo-head-img rotate" />
     </div>
-    <div class="button-box">
+    <!-- <div class="button-box">
       <button *ngIf="!isPauloHeadShowed && !isSelectPersoShowed" (click)="switchPaulo()">{{persos[persoIndex].name}} !!!!!!</button>
       <button *ngIf="!isPauloHeadShowed && !isSelectPersoShowed" (click)="returnToSelectPerso()">Revenir au choix des personnages</button>
-    </div>
+    </div> -->
   </div>
 </main>
 
